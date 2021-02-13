@@ -1,0 +1,10 @@
+img{
+    width: 100%;
+    mix-blend-mode:luminosity;
+}
+div{
+    background-color: black;
+}
+div:hover img{
+    mix-blend-mode: normal;
+}
