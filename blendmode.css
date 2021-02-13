@@ -1,9 +1,12 @@
 img{
     width: 100%;
     mix-blend-mode:luminosity;
+    cursor: pointer;
 }
 div{
     background-color: black;
+    width: 50%;
+    
 }
 div:hover img{
     mix-blend-mode: normal;
