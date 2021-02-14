@@ -1,7 +1,7 @@
 $(document).ready(function(){
-    // console.log($(document).scrollTop());
-    // console.log($('.test').offset().top);
-    // console.log($(window).height()/2);
+    console.log($(document).scrollTop());
+    console.log($('.test').offset().top);
+    console.log($(window).height()/2);
 
     // $(document).scroll(function(){
     //     $scroll = $(document).scrollTop();
