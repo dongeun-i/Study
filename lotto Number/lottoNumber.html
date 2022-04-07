@@ -30,17 +30,17 @@
 	</style>
 	<script>
 		function chooseNumber(){
-			let loto = [];
+			let lotto = [];
 			$('.clone').remove();
-			while(loto.length<6){
+			while(lotto.length<6){
 				let randomNumber = Math.floor(Math.random()*44)+1;
 				console.log(randomNumber , loto.length)
 				if(!loto.includes(randomNumber))loto.push(randomNumber);
 			}
-			loto.sort((a,b)=>{
+			lotto.sort((a,b)=>{
 				return a-b
 			})
-			loto.map(num=>{
+			lotto.map(num=>{
 				let $sample = $('.sample');
 				let $clone = $sample.clone().removeClass('sample').addClass('clone').text(num).insertBefore($sample);
 			})
