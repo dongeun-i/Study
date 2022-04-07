@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<title>로또번호 생성</title>
+	<style>
+		body > div {
+			display: flex; justify-content: center; flex-direction: column; align-items: center;
+		}
+		input{
+			width: 100px; height: 50px; font-size: 20px; background-color: #000; color: #fff; margin-bottom: 20px;
+		}
+		.number_container{
+			display: flex; width:100vw; justify-content: center;
+		}
+		.sample{
+			display: none;
+			visibility: hidden;
+		}
+		.clone{
+			width: 40px; height: 40px; border: 1px solid #ddd; font-size: 20px; font-weight: bold; text-align: center; line-height: 40px;
+			box-sizing: border-box;
+		}
+		.clone:not(:last-of-type){
+			margin-right: 20px;
+		}
+	</style>
+	<script>
+		function chooseNumber(){
+			let loto = [];
+			$('.clone').remove();
+			while(loto.length<6){
+				let randomNumber = Math.floor(Math.random()*44)+1;
+				console.log(randomNumber , loto.length)
+				if(!loto.includes(randomNumber))loto.push(randomNumber);
+			}
+			loto.sort((a,b)=>{
+				return a-b
+			})
+			loto.map(num=>{
+				let $sample = $('.sample');
+				let $clone = $sample.clone().removeClass('sample').addClass('clone').text(num).insertBefore($sample);
+			})
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<h1>로또 번호 추출하기</h1>
+		<input type="button" value="번호 뽑기" onclick="chooseNumber()">
+		<div class="number_container">
+			<div class="sample">
+			</div>
+		</div>
+	</div>
+</body>
+</html>
